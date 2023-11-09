@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.audiovideoproject">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+<!--
+    todo:(menthuguan)
+        1. appComponentFactory和appComponentFactory的意思
+-->
 
     <application
         android:allowBackup="true"
+        android:appComponentFactory="111"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AudioVideoProject">
+        android:theme="@style/Theme.AudioVideoProject"
+        tools:replace="android:appComponentFactory">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
