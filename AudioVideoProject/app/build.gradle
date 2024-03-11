@@ -45,4 +45,6 @@ dependencies {
 
     implementation 'pub.devrel:easypermissions:2.0.1'
 
+    implementation(fileTree("libs"))
+
 }

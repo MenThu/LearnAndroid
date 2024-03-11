@@ -6,6 +6,7 @@ import android.media.AudioRecord;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 
+import com.example.mylibrary.Utils;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +32,7 @@ import java.io.IOException;
 
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
+import com.example.mylibrary.Utils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     protected void onCreate(Bundle savedInstanceState) {
+        Utils.DebugLog();
+
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
