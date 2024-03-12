@@ -1,3 +1,4 @@
 rootProject.name = "AudioVideoProject"
 include ':app'
 include ':mylibrary'
+include ':myAARLibrary'

@@ -34,6 +34,8 @@ import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 import com.example.mylibrary.Utils;
 
+import com.example.myaarlibrary.DoAARTest;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
@@ -55,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         Utils.DebugLog();
+
+        DoAARTest aarTest = new DoAARTest();
+        aarTest.printfSomething();
 
         super.onCreate(savedInstanceState);
 

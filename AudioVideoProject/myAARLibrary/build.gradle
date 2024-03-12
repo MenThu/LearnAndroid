@@ -1,0 +1,61 @@
+//plugins {
+//    id 'com.android.library'
+//}
+
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+android {
+//    namespace 'com.example.myaarlibrary'
+    compileSdkVersion 29
+    buildToolsVersion "26.0.3"
+
+    defaultConfig {
+        minSdkVersion 18
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            debug(MavenPublication) {
+                // Applies the component for the debug build variant.
+                from components.debug
+                groupId = 'com.example'
+                artifactId = 'myaarlibrary'
+                version = '1.0.0'
+            }
+        }
+        publishing {
+            repositories {
+                maven {
+                    // change to point to your repo, e.g. http://my.org/repo
+                    url = "/Users/menthuguan-macmini/Desktop/personal-data/LearnAndroid/AudioVideoProject/myAARLibrary/AAR"
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.2.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+}
